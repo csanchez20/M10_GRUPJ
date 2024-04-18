@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="gestio_de_calendari.list">
+      <field name="name">gestio_de_calendari list</field>
+      <field name="model">gestio_de_calendari.gestio_de_calendari</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="gestio_de_calendari.action_window">
+      <field name="name">gestio_de_calendari window</field>
+      <field name="res_model">gestio_de_calendari.gestio_de_calendari</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="gestio_de_calendari.action_server">
+      <field name="name">gestio_de_calendari server</field>
+      <field name="model_id" ref="model_gestio_de_calendari_gestio_de_calendari"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="gestio_de_calendari" id="gestio_de_calendari.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="gestio_de_calendari.menu_1" parent="gestio_de_calendari.menu_root"/>
+    <menuitem name="Menu 2" id="gestio_de_calendari.menu_2" parent="gestio_de_calendari.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="gestio_de_calendari.menu_1_list" parent="gestio_de_calendari.menu_1"
+              action="gestio_de_calendari.action_window"/>
+    <menuitem name="Server to list" id="gestio_de_calendari" parent="gestio_de_calendari.menu_2"
+              action="gestio_de_calendari.action_server"/>
+-->
+  </data>
+</odoo>

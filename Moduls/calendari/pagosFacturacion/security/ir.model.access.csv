@@ -1,0 +1,5 @@
+# security/ir.model.access.csv
+
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_factura_usuario,gestion.factura.user,model_gestion_factura,base.group_user,1,1,1,1
+access_pago_usuario,gestion.pago.user,model_gestion_pago,base.group_user,1,1,1,1

@@ -1,0 +1,31 @@
+<!-- views/tarea_proyecto_vistas.xml -->
+
+<odoo>
+    <record id="vista_formulario_tarea_heredado" model="ir.ui.view">
+        <field name="name">project.task.form.inherit</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <group>
+                    <field name="nombre_vivienda"/>
+                    <field name="estado_digitalizacion"/>
+                    <field name="tipo_tarea"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="vista_lista_tarea_heredado" model="ir.ui.view">
+        <field name="name">project.task.tree.inherit</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_tree2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+                <field name="nombre_vivienda"/>
+                <field name="estado_digitalizacion"/>
+                <field name="tipo_tarea"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

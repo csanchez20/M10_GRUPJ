@@ -1,0 +1,7 @@
+    <!-- security/seguridad.xml -->
+
+<odoo>
+    <data noupdate="1">
+        <!-- Define security groups and rules here if needed -->
+    </data>
+</odoo>

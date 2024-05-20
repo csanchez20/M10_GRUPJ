@@ -1,0 +1,35 @@
+<!-- views/factura_views.xml -->
+
+<odoo>
+    <record id="vista_formulario_factura" model="ir.ui.view">
+        <field name="name">gestion.factura.form</field>
+        <field name="model">gestion.factura</field>
+        <field name="arch" type="xml">
+            <form string="Factura">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="fecha"/>
+                        <field name="cliente_id"/>
+                        <field name="total"/>
+                        <field name="estado"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="vista_lista_factura" model="ir.ui.view">
+        <field name="name">gestion.factura.tree</field>
+        <field name="model">gestion.factura</field>
+        <field name="arch" type="xml">
+            <tree string="Facturas">
+                <field name="name"/>
+                <field name="fecha"/>
+                <field name="cliente_id"/>
+                <field name="total"/>
+                <field name="estado"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

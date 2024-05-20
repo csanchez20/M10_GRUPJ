@@ -1,0 +1,35 @@
+<!-- views/pago_views.xml -->
+
+<odoo>
+    <record id="vista_formulario_pago" model="ir.ui.view">
+        <field name="name">gestion.pago.form</field>
+        <field name="model">gestion.pago</field>
+        <field name="arch" type="xml">
+            <form string="Pago">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="fecha"/>
+                        <field name="factura_id"/>
+                        <field name="monto"/>
+                        <field name="metodo_pago"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="vista_lista_pago" model="ir.ui.view">
+        <field name="name">gestion.pago.tree</field>
+        <field name="model">gestion.pago</field>
+        <field name="arch" type="xml">
+            <tree string="Pagos">
+                <field name="name"/>
+                <field name="fecha"/>
+                <field name="factura_id"/>
+                <field name="monto"/>
+                <field name="metodo_pago"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

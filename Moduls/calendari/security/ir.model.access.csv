@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_calendari_user,access_calendari_user,model_calendari_calendari,base.group_user,1,1,1,1
+access_cita_user,access_cita_user,model_calendari_cita,base.group_user,1,1,1,1
+access_reunion_user,access_reunion_user,model_calendari_reunion,base.group_user,1,1,1,1
+access_visita_user,access_visita_user,model_calendari_visita,base.group_user,1,1,1,1

@@ -1,0 +1,62 @@
+<odoo>
+    <template id="template_administra_personal" name="Administra Personal">
+        <t t-call="web.layout">
+            <div class="oe_structure">
+                <h1>Administración de Personal</h1>
+                <p>Total de Empleados: <t t-esc="data['total_empleados']"/></p>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="data['empleados']" t-as="empleado">
+                            <tr>
+                                <td><t t-esc="empleado[0]"/></td>
+                                <td><t t-esc="empleado[1]"/></td>
+                                <td><t t-esc="empleado[2]"/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+
+    <template id="template_proceso_reclutamiento" name="Proceso de Reclutamiento">
+        <t t-call="web.layout">
+            <div class="oe_structure">
+                <h1>Nuevo Empleado Reclutado</h1>
+                <p>ID: <t t-esc="nuevo_empleado.id_empleado"/></p>
+                <p>Nombre: <t t-esc="nuevo_empleado.nombre"/></p>
+                <p>Apellidos: <t t-esc="nuevo_empleado.apellidos"/></p>
+                <p>Cargo: <t t-esc="nuevo_empleado.cargo"/></p>
+                <p>Fecha de Contrato: <t t-esc="nuevo_empleado.fecha_contrato"/></p>
+                <p>Salario: <t t-esc="nuevo_empleado.salario"/></p>
+            </div>
+        </t>
+    </template>
+
+    <template id="template_tiempo_libre" name="Tiempo Libre">
+        <t t-call="web.layout">
+            <div class="oe_structure">
+                <h1>Tiempo Libre Actualizado</h1>
+                <p>Empleado: <t t-esc="empleado.nombre"/> <t t-esc="empleado.apellidos"/></p>
+                <p>Tiempo Libre Total: <t t-esc="empleado.tiempo_libre"/> horas</p>
+            </div>
+        </t>
+    </template>
+
+    <template id="template_evaluacion_desempeno" name="Evaluación de Desempeño">
+        <t t-call="web.layout">
+            <div class="oe_structure">
+                <h1>Evaluación de Desempeño Actualizada</h1>
+                <p>Empleado: <t t-esc="empleado.nombre"/> <t t-esc="empleado.apellidos"/></p>
+                <p>Evaluación: <t t-esc="empleado.evaluacion_desempeño"/></p>
+            </div>
+        </t>
+    </template>
+</odoo>

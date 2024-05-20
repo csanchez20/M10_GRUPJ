@@ -1,0 +1,60 @@
+<odoo>
+    <data>
+        <!-- Vista de llista per Empleado -->
+        <record id="view_empleado_tree" model="ir.ui.view">
+            <field name="name">empleado.tree</field>
+            <field name="model">recursos_humanos.empleado</field>
+            <field name="arch" type="xml">
+                <tree string="Empleados">
+                    <field name="id_empleado"/>
+                    <field name="nombre"/>
+                    <field name="apellidos"/>
+                    <field name="cargo"/>
+                    <field name="fecha_contrato"/>
+                    <field name="salario"/>
+                    <field name="tiempo_libre"/>
+                    <field name="evaluacion_desempeño"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista de formulari per Empleado amb botons -->
+        <record id="view_empleado_form" model="ir.ui.view">
+            <field name="name">empleado.form</field>
+            <field name="model">recursos_humanos.empleado</field>
+            <field name="arch" type="xml">
+                <form string="Empleado">
+                    <sheet>
+                        <group>
+                            <field name="id_empleado"/>
+                            <field name="nombre"/>
+                            <field name="apellidos"/>
+                            <field name="cargo"/>
+                            <field name="fecha_contrato"/>
+                            <field name="salario"/>
+                            <field name="tiempo_libre"/>
+                            <field name="evaluacion_desempeño"/>
+                        </group>
+                        <footer>
+                            <button name="AdministraPersonal" string="Administra Personal" type="object" class="btn-primary"/>
+                            <button name="ProcesoReclutamiento" string="Proceso Reclutamiento" type="object" class="btn-secondary"/>
+                            <button name="TiempoLibre" string="Actualizar Tiempo Libre" type="object" class="btn-secondary"/>
+                            <button name="EvaluacionDesempeño" string="Actualizar Evaluación Desempeño" type="object" class="btn-secondary"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Acció per a la vista de Empleado -->
+        <record id="action_empleado" model="ir.actions.act_window">
+            <field name="name">Empleados</field>
+            <field name="res_model">recursos_humanos.empleado</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menú per a Empleado -->
+        <menuitem id="menu_recursos_humanos_root" name="Recursos Humanos"/>
+        <menuitem id="menu_empleado" name="Empleados" parent="menu_recursos_humanos_root" action="action_empleado"/>
+    </data>
+</odoo>

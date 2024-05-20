@@ -1,0 +1,135 @@
+<odoo>
+    <data>
+        <!-- Vista de llista per Cita -->
+        <record id="view_cita_tree" model="ir.ui.view">
+            <field name="name">cita.tree</field>
+            <field name="model">calendari.cita</field>
+            <field name="arch" type="xml">
+                <tree string="Citas">
+                    <field name="id_cita"/>
+                    <field name="fecha"/>
+                    <field name="hora"/>
+                    <field name="ubicacion"/>
+                    <field name="cliente"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista de formulari per Cita -->
+        <record id="view_cita_form" model="ir.ui.view">
+            <field name="name">cita.form</field>
+            <field name="model">calendari.cita</field>
+            <field name="arch" type="xml">
+                <form string="Cita">
+                    <sheet>
+                        <group>
+                            <field name="id_cita"/>
+                            <field name="fecha"/>
+                            <field name="hora"/>
+                            <field name="ubicacion"/>
+                            <field name="descripcion"/>
+                            <field name="cliente"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vista de llista per Reunión -->
+        <record id="view_reunion_tree" model="ir.ui.view">
+            <field name="name">reunion.tree</field>
+            <field name="model">calendari.reunion</field>
+            <field name="arch" type="xml">
+                <tree string="Reuniones">
+                    <field name="id_reunion"/>
+                    <field name="fecha"/>
+                    <field name="hora"/>
+                    <field name="ubicacion"/>
+                    <field name="asistentes"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista de formulari per Reunión -->
+        <record id="view_reunion_form" model="ir.ui.view">
+            <field name="name">reunion.form</field>
+            <field name="model">calendari.reunion</field>
+            <field name="arch" type="xml">
+                <form string="Reunión">
+                    <sheet>
+                        <group>
+                            <field name="id_reunion"/>
+                            <field name="fecha"/>
+                            <field name="hora"/>
+                            <field name="ubicacion"/>
+                            <field name="descripcion"/>
+                            <field name="asistentes"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vista de llista per Visita -->
+        <record id="view_visita_tree" model="ir.ui.view">
+            <field name="name">visita.tree</field>
+            <field name="model">calendari.visita</field>
+            <field name="arch" type="xml">
+                <tree string="Visitas">
+                    <field name="id_visita"/>
+                    <field name="fecha"/>
+                    <field name="hora"/>
+                    <field name="ubicacion"/>
+                    <field name="propiedad"/>
+                    <field name="cliente"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista de formulari per Visita -->
+        <record id="view_visita_form" model="ir.ui.view">
+            <field name="name">visita.form</field>
+            <field name="model">calendari.visita</field>
+            <field name="arch" type="xml">
+                <form string="Visita">
+                    <sheet>
+                        <group>
+                            <field name="id_visita"/>
+                            <field name="fecha"/>
+                            <field name="hora"/>
+                            <field name="ubicacion"/>
+                            <field name="propiedad"/>
+                            <field name="descripcion"/>
+                            <field name="cliente"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Accions per a les entitats -->
+        <record id="action_cita" model="ir.actions.act_window">
+            <field name="name">Citas</field>
+            <field name="res_model">calendari.cita</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_reunion" model="ir.actions.act_window">
+            <field name="name">Reuniones</field>
+            <field name="res_model">calendari.reunion</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_visita" model="ir.actions.act_window">
+            <field name="name">Visitas</field>
+            <field name="res_model">calendari.visita</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menús per a les entitats -->
+        <menuitem id="menu_calendari_root" name="Calendari"/>
+        <menuitem id="menu_cita" name="Citas" parent="menu_calendari_root" action="action_cita"/>
+        <menuitem id="menu_reunion" name="Reuniones" parent="menu_calendari_root" action="action_reunion"/>
+        <menuitem id="menu_visita" name="Visitas" parent="menu_calendari_root" action="action_visita"/>
+    </data>
+</odoo>

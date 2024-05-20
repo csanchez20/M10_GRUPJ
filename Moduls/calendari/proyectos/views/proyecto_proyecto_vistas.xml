@@ -1,0 +1,37 @@
+<!-- views/proyecto_proyecto_vistas.xml -->
+
+<odoo>
+    <record id="vista_formulario_proyecto_heredado" model="ir.ui.view">
+        <field name="name">project.project.form.inherit</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <group>
+                    <field name="cliente_id"/>
+                    <field name="direccion"/>
+                    <field name="precio"/>
+                    <field name="fecha_inicio"/>
+                    <field name="fecha_fin"/>
+                    <field name="estado"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="vista_lista_proyecto_heredado" model="ir.ui.view">
+        <field name="name">project.project.tree.inherit</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+                <field name="cliente_id"/>
+                <field name="direccion"/>
+                <field name="precio"/>
+                <field name="fecha_inicio"/>
+                <field name="fecha_fin"/>
+                <field name="estado"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
